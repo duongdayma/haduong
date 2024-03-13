@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài toán cho thuê máy</title>
+</head>
+<body>
+    <h1>Bài toán cho thuê máy</h1>
+    <div id="input">
+        <p>Số lượng khách hàng:</p>
+        <input type="number" id="num-customers" min="1" value="3">
+        <p>Nhu cầu sử dụng máy của mỗi khách hàng:</p>
+        <div id="customer-needs"></div>
+    </div>
+    <div id="output">
+        <p>Tổng số ngày sử dụng máy lớn nhất:</p>
+        <span id="max-days"></span>
+        <p>Danh sách khách hàng được chọn:</p>
+        <ul id="selected-customers"></ul>
+    </div>
+    <button id="solve">Giải bài toán</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

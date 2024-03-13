@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DFS Algorithm</title>
+</head>
+<body>
+  <h1>DFS Algorithm</h1>
+
+  <script>
+    
+    class Graph {
+      constructor() {
+        this.vertices = [];
+        this.edges = {};
+      }
+
+      addVertex(vertex) {
+        this.vertices.push(vertex);
+        this.edges[vertex] = [];
+      }
+
+      addEdge(vertex1, vertex2) {
+        this.edges[vertex1].push(vertex2);
+        this.edges[vertex2].push(vertex1); // Uncomment for undirected graph
+      }
+
+      dfs(startingVertex, visited = {}) {
+        const result = [];
+        const stack = [startingVertex];
+        visited[startingVertex] = true;
+
+        while (stack.length > 0) {
+          const currentVertex = stack.pop();
+          result.push(currentVertex);
+
+          this.edges[currentVertex].forEach(neighbor => {
+            if (!visited[neighbor]) {
+              visited[neighbor] = true;
+              stack.push(neighbor);
+            }
+          });
+        }
+
+        return result;
+      }
+    }
+
+    // Example Usage
+    const graph = new Graph();
+
+    // Add vertices
+    graph.addVertex('A');
+    graph.addVertex('B');
+    graph.addVertex('C');
+    graph.addVertex('D');
+    graph.addVertex('E');
+
+    // Add edges
+    graph.addEdge('A', 'B');
+    graph.addEdge('A', 'C');
+    graph.addEdge('B', 'D');
+    graph.addEdge('C', 'E');
+
+    // Perform DFS starting from vertex 'A'
+    const dfsResult = graph.dfs('A');
+
+    console.log('DFS Result:', dfsResult);
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm cây khung nhỏ nhất - Thuật toán Kruskal</title>
+</head>
+<body>
+    <h1>Tìm cây khung nhỏ nhất bằng thuật toán Kruskal</h1>
+    <p>Nhập số lượng đỉnh:</p>
+    <input type="number" id="num-nodes" min="2">
+    <br>
+    <p>Nhập thông tin về các cạnh (mỗi cạnh trên một dòng, định dạng: đỉnh nguồn - đỉnh đích - trọng số):</p>
+    <textarea id="edges-data" rows="10" cols="50"></textarea>
+    <br>
+    <button onclick="findMST()">Tìm cây khung nhỏ nhất</button>
+    <br>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+
